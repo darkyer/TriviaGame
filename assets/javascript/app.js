@@ -5,21 +5,21 @@ var corrects;
 var incorrects;
 
 var questionOne = {
-    question: "here is the question",
-    possibleAnswers: ["ab 1", "ac 2", "ab 3", "ac 4"],
-    correctAnswer: "ac 2"
+    question: "Pac-Man was originally going to be known as what?",
+    possibleAnswers: ["Puckman", "Discman", "Pizzaman", "Greedyman"],
+    correctAnswer: "Puckman"
 }
 
 var questionTwo = {
-    question: "here is the question",
-    possibleAnswers: ["qe 1", "qe 2", "qe 3", "qe 4"],
-    correctAnswer: "qe 3"
+    question: "Which Atari game was so bad, it was taken offsale and buried in a Mexican desert?",
+    possibleAnswers: ["Breakout", "Pong", "E.T. The Extraterrestrial", "Yars Reveng"],
+    correctAnswer: "E.T. The Extraterrestrial"
 }
 
 var questionThree = {
-    question: "here is the question",
-    possibleAnswers: ["rt 1", "rt 2", "rt 3", "rt 4"],
-    correctAnswer: "rt 4"
+    question: "The original Contra was famous for creating which cheat code?",
+    possibleAnswers: ["Nintendo Code", "The UbiCode", "The Konami Code", "The Nes Code"],
+    correctAnswer: "The Konami Code"
 }
 
 var questions = [questionOne, questionTwo, questionThree];
@@ -49,6 +49,7 @@ function CreateQuestion() {
         return;
     }
     var question = questions[count].question;
+    $("#question").text(question);
     SetupAnswers();
     $("#ingame").attr("style", "display: block;");
     $("#menu").attr("style", "display: none;");
@@ -95,7 +96,7 @@ function ShowTimeOutResult() {
     $("#inter").attr("style", "display: block;");
 
     $("#inter-title").text("Time up! you didn't answered");
-    $("#correct-answer").text("The correct answer was: " + questions[count - 1].correctAnswer);
+    $("#correct-answer").html("<h3>The correct answer was: <span class='main-color'>" + questions[count - 1].correctAnswer+"<span></h3>");
     $("#corrects").text("Correct answers: " + corrects);
     $("#incorrects").text("Incorrect answers: " + incorrects);
     setTimeout(CreateQuestion, 3 * 1000);
@@ -108,7 +109,7 @@ function ShowWinResult() {
     $("#inter").attr("style", "display: block;");
 
     $("#inter-title").text("That's correct, you win a point");
-    $("#correct-answer").text("The correct answer was: " + questions[count - 1].correctAnswer);
+    $("#correct-answer").html("<h3>The correct answer was: <span class='main-color'>" + questions[count - 1].correctAnswer+"<span></h3>");
     $("#corrects").text("Correct answers: " + corrects);
     $("#incorrects").text("Incorrect answers: " + incorrects);
     setTimeout(CreateQuestion, 3 * 1000);
@@ -121,7 +122,7 @@ function ShowLooseResult() {
     $("#inter").attr("style", "display: block;");
 
     $("#inter-title").text("That's incorrect, you loose a point");
-    $("#correct-answer").text("The correct answer was: " + questions[count - 1].correctAnswer);
+    $("#correct-answer").html("<h3>The correct answer was: <span class='main-color'>" + questions[count - 1].correctAnswer+"<span></h3>");
     $("#corrects").text("Correct answers: " + corrects);
     $("#incorrects").text("Incorrect answers: " + incorrects);
     setTimeout(CreateQuestion, 3 * 1000);

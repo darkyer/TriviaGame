@@ -35,10 +35,27 @@
     line-height: 0.8;
 }
 
+/* Stuff for animated sprite */
+/* .frog{
+    width: 90px;
+    height: 82px;
+    background: url('../images/FrogAtlas.png') left center;
+    animation: play 0.8s steps(4) infinite;
+    position: fixed;
+    left:30%;
+    bottom: 50px;
+}
+
+@keyframes play {
+    100% { background-position: -359px; }
+ } */
+
+
 .bg{
     position: fixed;
     bottom: 0;
 }
+
 
 body
 {
