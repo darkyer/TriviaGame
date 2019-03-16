@@ -4,6 +4,11 @@ var time;
 var corrects;
 var incorrects;
 
+var audioClick = new Audio("assets/audio/click.mp3");
+var audioWin = new Audio("assets/audio/win.mp3");
+var audioLose = new Audio("assets/audio/lose.mp3");
+
+
 var questionOne = {
     question: "Pac-Man was originally going to be known as what?",
     possibleAnswers: ["Puckman", "Discman", "Pizzaman", "Greedyman"],
@@ -54,20 +59,27 @@ function CreateQuestion() {
     $("#ingame").attr("style", "display: block;");
     $("#menu").attr("style", "display: none;");
     $("#inter").attr("style", "display: none;");
-    time = 10;
+    time = 30;
     $("#timer").text(time + " seconds left!");
     timerInterval = setInterval(Timer, 1000);
 
 }
 function SetupAnswers() {
+    PlayClickAudio();
     $(".answer").each(function (index) {
         $(this).text(questions[count].possibleAnswers[index]);
         $(this).attr("value", questions[count].possibleAnswers[index]);
     })
 }
 
+function PlayClickAudio(){
+    audioClick.pause();
+    audioClick.currentTime = 0;
+    audioClick.play();
+}
 
 function SelectAnswer() {
+    PlayClickAudio();
     var value = $(this).attr("value");
     count++;
     clearInterval(timerInterval);
@@ -104,6 +116,11 @@ function ShowTimeOutResult() {
 
 function ShowWinResult() {
     corrects++;
+
+    audioWin.pause();
+    audioWin.currentTime = 0;
+    audioWin.play();
+
     $("#ingame").attr("style", "display: none;");
     $("#menu").attr("style", "display: none;");
     $("#inter").attr("style", "display: block;");
@@ -117,6 +134,11 @@ function ShowWinResult() {
 
 function ShowLooseResult() {
     incorrects++;
+
+    audioLose.pause();
+    audioLose.currentTime = 0;
+    audioLose.play();
+
     $("#ingame").attr("style", "display: none;");
     $("#menu").attr("style", "display: none;");
     $("#inter").attr("style", "display: block;");
@@ -144,5 +166,4 @@ function ShowEnding() {
     setInterval(function(){
         x-=1;
         $('body').css('background-position', x + 'px 0');
-        console.log("moving bg");
     }, 90);
