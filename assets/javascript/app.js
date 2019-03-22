@@ -103,6 +103,10 @@ function Timer() {
 
 function ShowTimeOutResult() {
     incorrects++;
+    
+    audioLose.pause();
+    audioLose.currentTime = 0;
+    audioLose.play();
     $("#ingame").attr("style", "display: none;");
     $("#menu").attr("style", "display: none;");
     $("#inter").attr("style", "display: block;");
