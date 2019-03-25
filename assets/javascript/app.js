@@ -9,25 +9,29 @@ var audioWin = new Audio("assets/audio/win.mp3");
 var audioLose = new Audio("assets/audio/lose.mp3");
 
 
-var questionOne = {
-    question: "Pac-Man was originally going to be known as what?",
-    possibleAnswers: ["Puckman", "Discman", "Pizzaman", "Greedyman"],
-    correctAnswer: "Puckman"
-}
+var questions = [
+    {
+        question: "Pac-Man was originally going to be known as what?",
+        possibleAnswers: ["Puckman", "Discman", "Pizzaman", "Greedyman"],
+        correctAnswer: "Puckman"
+    }, 
+    {
+        question: "Which Atari game was so bad, it was taken offsale and buried in a Mexican desert?",
+        possibleAnswers: ["Breakout", "Pong", "E.T. The Extraterrestrial", "Yars Reveng"],
+        correctAnswer: "E.T. The Extraterrestrial"
+    }, 
+    {
+        question: "The original Contra was famous for creating which cheat code?",
+        possibleAnswers: ["Nintendo Code", "The UbiCode", "The Konami Code", "The Nes Code"],
+        correctAnswer: "The Konami Code"
+    },
+    {
+        question: "Which famous series was the first to feature cutscenes?",
+        possibleAnswers: ["Teenage Mutant Ninja Turtles", "Bubble Bobble", "Ghosts and Goblins", "Ninja Gaiden"],
+        correctAnswer: "Ninja Gaiden"
+    }];
 
-var questionTwo = {
-    question: "Which Atari game was so bad, it was taken offsale and buried in a Mexican desert?",
-    possibleAnswers: ["Breakout", "Pong", "E.T. The Extraterrestrial", "Yars Reveng"],
-    correctAnswer: "E.T. The Extraterrestrial"
-}
-
-var questionThree = {
-    question: "The original Contra was famous for creating which cheat code?",
-    possibleAnswers: ["Nintendo Code", "The UbiCode", "The Konami Code", "The Nes Code"],
-    correctAnswer: "The Konami Code"
-}
-
-var questions = [questionOne, questionTwo, questionThree];
+    
 var count;
 
 $("#start-game").on("click", StartGame);
