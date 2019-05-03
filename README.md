@@ -13,7 +13,7 @@ You can Download it and use it locally or just use the github pages link ([Githu
 ## Built With
 
 * [Javascript](https://www.javascript.com/)
-* [Jquery - AJAX](https://jquery.com/)
+* [Jquery](https://jquery.com/)
 * [Bootstrap](https://getbootstrap.com/) - Used to for front-end
 
 ## Authors
